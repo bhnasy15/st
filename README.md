@@ -10,3 +10,5 @@ http://st.suckless.org/patches/bold-is-not-bright/
 
 http://st.suckless.org/patches/keyboard_select/
 
+http://st.suckless.org/patches/invert/
+
