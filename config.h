@@ -8,6 +8,9 @@
 static char *font = "monospace:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 1;
 
+/* bg opacity */
+float alpha = 0.8;
+
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
