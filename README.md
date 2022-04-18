@@ -13,3 +13,5 @@ http://st.suckless.org/patches/keyboard_select/
 
 http://st.suckless.org/patches/invert/
 
+http://st.suckless.org/patches/vim_browse/
+
