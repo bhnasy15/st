@@ -100,18 +100,18 @@ unsigned int tabspaces = 4;
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"#000000",
-	"#FF1744",
+	"#E01734",
 	"#00C853",
-	"#FFEA00",
-	"#00B0FF",
-	"#AA00FF",
-	"#18FFFF",
+	"#E0C000",
+	"#00A0E0",
+	"#9900EE",
+	"#10E0E0",
 	"#e5e1d8",
 
 	/* 8 bright colors */
-	"#546E7A",
+	"#78909C",
 	"#FF1744",
-	"#00C853",
+	"#00D863",
 	"#FFFF00",
 	"#42A5F5",
 	"#E040FB",
@@ -178,25 +178,25 @@ static uint forcemousemod = ShiftMask;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
-		{ "color0",       STRING,  &colorname[0] },
-		{ "color1",       STRING,  &colorname[1] },
-		{ "color2",       STRING,  &colorname[2] },
-		{ "color3",       STRING,  &colorname[3] },
-		{ "color4",       STRING,  &colorname[4] },
-		{ "color5",       STRING,  &colorname[5] },
-		{ "color6",       STRING,  &colorname[6] },
-		{ "color7",       STRING,  &colorname[7] },
-		{ "color8",       STRING,  &colorname[8] },
-		{ "color9",       STRING,  &colorname[9] },
-		{ "color10",      STRING,  &colorname[10] },
-		{ "color11",      STRING,  &colorname[11] },
-		{ "color12",      STRING,  &colorname[12] },
-		{ "color13",      STRING,  &colorname[13] },
-		{ "color14",      STRING,  &colorname[14] },
-		{ "color15",      STRING,  &colorname[15] },
-		{ "cursorColor",  STRING,  &colorname[256] },
-		{ "foreground",   STRING,  &colorname[258] },
-		{ "background",   STRING,  &colorname[259] },
+		{ "color0",       STRING,  &colorname[0] }, //black
+		{ "color1",       STRING,  &colorname[1] }, //red3
+		{ "color2",       STRING,  &colorname[2] }, //green3
+		{ "color3",       STRING,  &colorname[3] }, //yellow3
+		{ "color4",       STRING,  &colorname[4] }, //blue2
+		{ "color5",       STRING,  &colorname[5] }, //magenta3
+		{ "color6",       STRING,  &colorname[6] }, //cyan3
+		{ "color7",       STRING,  &colorname[7] }, //gray90
+		{ "color8",       STRING,  &colorname[8] }, //gray30
+		{ "color9",       STRING,  &colorname[9] }, //red
+		{ "color10",      STRING,  &colorname[10] }, //green
+		{ "color11",      STRING,  &colorname[11] }, //yellow
+		{ "color12",      STRING,  &colorname[12] }, //blue
+		{ "color13",      STRING,  &colorname[13] }, //magenta
+		{ "color14",      STRING,  &colorname[14] }, //cyan
+		{ "color15",      STRING,  &colorname[15] }, //white
+		{ "cursorColor",  STRING,  &colorname[256] }, //cursor
+		{ "foreground",   STRING,  &colorname[258] }, //foreground
+		{ "background",   STRING,  &colorname[259] }, //background
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "minlatency",   INTEGER, &minlatency },
@@ -235,7 +235,7 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ ControlMask,          XK_minus,       zoom,           {.f = -1} },
 	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
-	{ ControlMask,          XK_0,           zoomreset,      {.f =  0} },
+	{ ControlMask,          XK_equal,           zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
