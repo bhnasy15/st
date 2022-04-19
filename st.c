@@ -2880,14 +2880,14 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		cu.x = term.c.x, cu.y = term.c.y;
 		set_notifmode(0, ksym);
 		return MODE_KBDSELECT;
-	case XK_s :
+	case XK_v :
 		if ( selectsearch_mode & 1 )
 			selclear();
 		else
 			selstart(term.c.x, term.c.y, 0);
 		set_notifmode(selectsearch_mode ^= 1, ksym);
 		break;
-	case XK_t :
+	case XK_q :
 		selextend(term.c.x, term.c.y, type ^= 3, i = 0);  /* 2 fois */
 		selextend(term.c.x, term.c.y, type, i = 0);
 		break;
