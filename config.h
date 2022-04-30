@@ -6,7 +6,6 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "monospace:pixelsize=13:antialias=true:autohint=true";
-//static char *font = "monospace-11";
 static int borderpx = 1;
 
 /* bg opacity */
@@ -75,7 +74,7 @@ static unsigned int cursorthickness = 2;
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
-static int bellvolume = 0;
+static int bellvolume = 1;
 
 /* default TERM value */
 char *termname = "st";
@@ -151,8 +150,8 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 24;
-static unsigned int rows = 80;
+static unsigned int cols = 60;
+static unsigned int rows = 40;
 
 /*
  * Default colour and shape of the mouse cursor
@@ -246,6 +245,8 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 	{ Mod1Mask,             XK_Escape,      keyboard_select,{.i =  0} },
 	{ TERMMOD,              XK_X,           invert,         { }       },
+	{ TERMMOD,				XK_S,			changealpha,	{.f = -0.1} },
+	{ TERMMOD,				XK_A,			changealpha,	{.f = +0.1} },
 };
 
 /*

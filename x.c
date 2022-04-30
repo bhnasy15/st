@@ -74,6 +74,7 @@ static void zoomabs(const Arg *);
 static void zoomreset(const Arg *);
 static void ttysend(const Arg *);
 static void invert(const Arg *);
+static void changealpha(const Arg *);
 
 /* config.h for applying patches and the configuration. */
 #include "config.h"
@@ -201,6 +202,7 @@ static void mousesel(XEvent *, int);
 static void mousereport(XEvent *);
 static char *kmap(KeySym, uint);
 static int match(uint, uint);
+static float clamp(float, float, float);
 
 static void run(void);
 static void usage(void);
@@ -271,6 +273,26 @@ static char *opt_title = NULL;
 
 static int invertcolors = 0;
 static int oldbutton = 3; /* button event on startup: 3 = release */
+
+float
+clamp(float value, float lower, float upper) {
+    if(value < lower)
+        return lower;
+    if(value > upper)
+        return upper;
+    return value;
+}
+
+void
+changealpha(const Arg *arg)
+{
+    if((alpha > 0 && arg->f < 0) || (alpha < 1 && arg->f > 0))
+        alpha += arg->f;
+    alpha = clamp(alpha, 0.0, 1.0);
+
+    xloadcols();
+    redraw();
+}
 
 void
 invert(const Arg *dummy)
