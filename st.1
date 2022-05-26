@@ -1,6 +1,8 @@
 .TH ST 1 st\-VERSION
+
 .SH NAME
 st \- simple terminal
+
 .SH SYNOPSIS
 .B st
 .RB [ \-aiv ]
@@ -25,6 +27,7 @@ st \- simple terminal
 .RB [[ \-e ]
 .IR command
 .RI [ arguments ...]]
+
 .PP
 .B st
 .RB [ \-aiv ]
@@ -47,49 +50,62 @@ st \- simple terminal
 .RB \-l
 .IR line
 .RI [ stty_args ...]
+
 .SH DESCRIPTION
 .B st
 is a simple terminal emulator.
+
 .SH OPTIONS
+
 .TP
 .B \-a
 disable alternate screens in terminal
+
 .TP
 .BI \-c " class"
 defines the window class (default $TERM).
+
 .TP
 .BI \-f " font"
 defines the
 .I font
 to use when st is run.
+
 .TP
 .BI \-g " geometry"
 defines the X11 geometry string.
 The form is [=][<cols>{xX}<rows>][{+-}<xoffset>{+-}<yoffset>]. See
 .BR XParseGeometry (3)
 for further details.
+
 .TP
 .B \-i
 will fixate the position given with the -g option.
+
 .TP
 .BI \-n " name"
 defines the window instance name (default $TERM).
+
 .TP
 .BI \-o " iofile"
 writes all the I/O to
 .I iofile.
 This feature is useful when recording st sessions. A value of "-" means
 standard output.
+
 .TP
 .BI \-T " title"
 defines the window title (default 'st').
+
 .TP
 .BI \-t " title"
 defines the window title (default 'st').
+
 .TP
 .BI \-w " windowid"
 embeds st within the window identified by
 .I windowid
+
 .TP
 .BI \-l " line"
 use a tty
@@ -110,9 +126,11 @@ flags. If you want to set odd parity on 115200 baud use for example 'st -l
 example 'st -l /dev/ttyS0 cs7 115200'. See
 .BR stty(1)
 for more arguments and cases.
+
 .TP
 .B \-v
 prints version information to stderr, then exits.
+
 .TP
 .BI \-e " command " [ " arguments " "... ]"
 st executes
@@ -123,55 +141,126 @@ on the command line, as in xterm / rxvt.
 This option is only intended for compatibility,
 and all the remaining arguments are used as a command
 even without it.
+
 .SH SHORTCUTS
+
 .TP
 .B Break
 Send a break in the serial line.
 Break key is obtained in PC keyboards
 pressing at the same time control and pause.
+
 .TP
 .B Ctrl-Print Screen
 Toggle if st should print to the
 .I iofile.
+
 .TP
 .B Shift-Print Screen
 Print the full screen to the
 .I iofile.
+
 .TP
 .B Print Screen
 Print the selection to the
 .I iofile.
+
 .TP
-.B Ctrl-Shift-Page Up
+.B Ctrl-Shift-Equal
 Increase font size.
+
 .TP
-.B Ctrl-Shift-Page Down
+.B Ctrl-Minus
 Decrease font size.
+
 .TP
-.B Ctrl-Shift-Home
+.B Ctrl-Equal
 Reset to default font size.
+
+.TP
+.B Ctrl-Shift-x
+Invert colors (pseudo light mode).
+
+.TP
+.B Alt-Escape
+Enter "Keyboard select mode"
+
+.RS
+.TP 
+.B h,j,k,l
+vim movement keys to move.
+.TP
+.B v 
+ toggle select mode.
+.TP
+.B q
+ toggle block select mode.
+.TP
+.B \/
+search.
+.TP
+.B Enter
+keep selection and exit.
+.TP
+.B Escape
+discard selection and exit.
+.RE
+
+.TP
+.B Shift-Page Up
+Scroll Up one page.
+
+.TP
+.B Shift-Page Down
+Scroll Down one page.
+
+.TP
+.B Ctrl-k
+Scroll Up 2 lines.
+
+.TP
+.B Ctrl-j
+Scroll Down 2 lines.
+
+.TP
+.B Ctrl-Shift-s
+Increase Opacity by 0.1
+
+.TP
+.B Ctrl0Shift-a
+Decrease Opacity by 0.1
+
 .TP
 .B Ctrl-Shift-y
 Paste from primary selection (middle mouse button).
+
 .TP
 .B Ctrl-Shift-c
 Copy the selected text to the clipboard selection.
+
 .TP
 .B Ctrl-Shift-v
 Paste from the clipboard selection.
+
 .SH CUSTOMIZATION
+
 .B st
 can be customized by creating a custom config.h and (re)compiling the source
 code. This keeps it fast, secure and simple.
+
 .SH AUTHORS
 See the LICENSE file for the authors.
+
 .SH LICENSE
 See the LICENSE file for the terms of redistribution.
+
 .SH SEE ALSO
+
 .BR tabbed (1),
 .BR utmp (1),
 .BR stty (1),
 .BR scroll (1)
+
 .SH BUGS
 See the TODO file in the distribution.
 
