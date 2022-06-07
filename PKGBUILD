@@ -3,10 +3,12 @@ pkgname=st
 pkgrel=1
 pkgver=0.8.5
 pkgdesc="A fully patched sucless simple terminal"
-arch=('any')
+arch=('x86_64' 'i686')
 url="https://github.com/yarob-0/st"
+privides=('st')
+conflicts=('st')
 license=('MIT')
-makedepends=('make')
+makedepends=('make' 'git')
 source=("git+${url}.git#branch=main")
 md5sums=('SKIP')
 validpgpkeys=()
