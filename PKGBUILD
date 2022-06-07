@@ -1,5 +1,5 @@
 # Maintainer: yarob-0
-pkgname=y-st
+pkgname=st
 pkgrel=1
 pkgver=0.8.5
 pkgdesc="A fully patched sucless simple terminal"
