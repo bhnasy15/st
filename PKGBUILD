@@ -1,7 +1,7 @@
 # Maintainer: yarob-0
-pkgname=st
+pkgname=y-st
 pkgrel=1
-pkgver=r25.8f4faf1
+pkgver=0.8.5
 pkgdesc="A fully patched sucless simple terminal"
 arch=('any')
 url="https://github.com/yarob-0/st"
@@ -18,7 +18,7 @@ build() {
 
 pkgver() {
 	cd "${pkgname%}"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+	printf "0.8.5.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
