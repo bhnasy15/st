@@ -1,0 +1,12 @@
+pkgbase = st
+	pkgdesc = A fully patched sucless simple terminal
+	pkgver = r25.8f4faf1
+	pkgrel = 1
+	url = https://github.com/yarob-0/st
+	arch = any
+	license = MIT
+	makedepends = make
+	source = git+https://github.com/yarob-0/st.git#branch=main
+	md5sums = SKIP
+
+pkgname = st
